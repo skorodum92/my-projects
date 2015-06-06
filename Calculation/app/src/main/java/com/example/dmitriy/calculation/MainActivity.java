@@ -10,27 +10,19 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    Button m_Button;
-    TextView m_tv;
+
+    TextView tv;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        m_tv.setText("hello world");
+        tv = (TextView) findViewById(R.id.tv);
+        tv.setText("0");
 
-        m_Button = (Button) findViewById(R.id.button);
+        }
 
-        m_tv = (TextView) findViewById(R.id.tv);
-
-        m_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                m_tv.setText("0");
-            }
-        });
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,6 +30,49 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    static boolean isempty=true;
+    public void num_Clicked(View sender ) {
+        Button bt = (Button) sender;
+        if (tv.getText().length() > 7) return;
+        if (isempty) {
+            tv.setText(bt.getText());
+            isempty = false;
+        } else {
+            tv.append(bt.getText());
+        }
+    }
+        static int accumulator=0;
+    static short operationToDo=0;
+       public void op_Clicked(View sender){
+           Button bt = (Button) sender;
+           switch(operationToDo){
+               case 0:
+                   accumulator+=Integer.parseInt( tv.getText().toString() );
+                break;
+
+               case 1:
+                   accumulator-=Integer.parseInt( tv.getText().toString() );
+                   break;
+
+               case 2:
+                   accumulator+=Integer.parseInt( tv.getText().toString() );
+                   break;
+
+               case 3:
+                   accumulator+=Integer.parseInt( tv.getText().toString() );
+                   break;
+           }
+    tv.setText(Integer.toString(accumulator));
+           if(bt.getText().toString().equals("+")) operationToDo=0;
+           if(bt.getText().toString().equals("-")) operationToDo=1;
+           if(bt.getText().toString().equals("/")) operationToDo=2;
+           if(bt.getText().toString().equals("*")) operationToDo=3;
+           isempty=true;
+        }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
