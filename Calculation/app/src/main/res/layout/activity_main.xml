@@ -13,17 +13,18 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="             C            "
+        android:text="CE"
         android:id="@+id/button"
         android:layout_marginTop="45dp"
         android:layout_below="@id/tv"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:onClick="button_Click" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="     *     "
+        android:text="*"
         android:id="@+id/button2"
         android:layout_alignTop="@id/button"
         android:layout_toRightOf="@id/button"
@@ -33,7 +34,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      /      "
+        android:text="/"
         android:id="@+id/button3"
         android:layout_alignTop="@id/button2"
         android:layout_toRightOf="@id/button2"
@@ -43,7 +44,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      7      "
+        android:text="7"
         android:id="@+id/button4"
         android:layout_below="@id/button"
         android:layout_alignParentLeft="true"
@@ -53,7 +54,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      8      "
+        android:text="8"
         android:id="@+id/button5"
         android:layout_below="@id/button"
         android:layout_toRightOf="@id/button4"
@@ -63,7 +64,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      9      "
+        android:text="9"
         android:id="@+id/button6"
         android:layout_below="@id/button2"
         android:layout_toRightOf="@id/button5"
@@ -73,7 +74,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      4      "
+        android:text="4"
         android:id="@+id/button7"
         android:layout_below="@id/button4"
         android:layout_alignParentLeft="true"
@@ -83,7 +84,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      5      "
+        android:text="5"
         android:id="@+id/button8"
         android:layout_below="@id/button5"
         android:layout_toRightOf="@id/button4"
@@ -93,7 +94,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      6      "
+        android:text="6"
         android:id="@+id/button9"
         android:layout_alignTop="@id/button8"
         android:layout_toRightOf="@id/button8"
@@ -103,7 +104,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      1      "
+        android:text="1"
         android:id="@+id/button10"
         android:layout_below="@id/button7"
         android:layout_alignParentLeft="true"
@@ -113,7 +114,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      2      "
+        android:text="2"
         android:id="@+id/button11"
         android:layout_below="@id/button8"
         android:layout_toRightOf="@id/button10"
@@ -123,7 +124,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      3      "
+        android:text="3"
         android:id="@+id/button12"
         android:layout_below="@id/button8"
         android:layout_toRightOf="@id/button11"
@@ -133,7 +134,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="            0            "
+        android:text="0"
         android:id="@+id/button13"
         android:layout_below="@id/button10"
         android:layout_alignParentLeft="true"
@@ -143,7 +144,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="        ,        "
+        android:text=","
         android:id="@+id/button14"
         android:layout_below="@id/button11"
         android:layout_toRightOf="@id/button13"
@@ -152,7 +153,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      -      "
+        android:text="-"
         android:id="@+id/button15"
         android:layout_below="@id/button13"
         android:layout_alignParentLeft="true"
@@ -162,7 +163,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      +      "
+        android:text="+"
         android:id="@+id/button16"
         android:layout_below="@id/button13"
         android:layout_toRightOf="@id/button10"
@@ -172,11 +173,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          =          "
+        android:text="="
         android:id="@+id/button17"
         android:layout_below="@id/button14"
         android:layout_toRightOf="@id/button16"
-        android:layout_toEndOf="@id/button16" />
+        android:layout_toEndOf="@id/button16"
+        android:onClick="op_Clicked" />
 
 
 </RelativeLayout>

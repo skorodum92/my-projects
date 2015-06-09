@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MainActivity extends ActionBarActivity {
 
 
     TextView tv;
+
 
 
     @Override
@@ -21,7 +23,9 @@ public class MainActivity extends ActionBarActivity {
         tv = (TextView) findViewById(R.id.tv);
         tv.setText("0");
 
-        }
+
+
+    }
 
 
     @Override
@@ -31,8 +35,9 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    static boolean isempty=true;
-    public void num_Clicked(View sender ) {
+    static boolean isempty = true;
+
+    public void num_Clicked(View sender) {
         Button bt = (Button) sender;
         if (tv.getText().length() > 7) return;
         if (isempty) {
@@ -42,33 +47,46 @@ public class MainActivity extends ActionBarActivity {
             tv.append(bt.getText());
         }
     }
-        static int accumulator=0;
-    static short operationToDo=0;
-       public void op_Clicked(View sender){
-           Button bt = (Button) sender;
-           switch(operationToDo){
-               case 0:
-                   accumulator+=Integer.parseInt( tv.getText().toString() );
+
+    static int accumulator = 0;
+    static short operationToDo = 0;
+
+    public void op_Clicked(View sender) {
+        Button bt = (Button) sender;
+        switch (operationToDo) {
+            case 0:
+                accumulator += Integer.parseInt(tv.getText().toString());
                 break;
 
-               case 1:
-                   accumulator-=Integer.parseInt( tv.getText().toString() );
-                   break;
+            case 1:
+                accumulator -= Integer.parseInt(tv.getText().toString());
+                break;
 
-               case 2:
-                   accumulator+=Integer.parseInt( tv.getText().toString() );
-                   break;
+            case 2:
+                accumulator /= Integer.parseInt(tv.getText().toString());
+                break;
 
-               case 3:
-                   accumulator+=Integer.parseInt( tv.getText().toString() );
-                   break;
-           }
-    tv.setText(Integer.toString(accumulator));
-           if(bt.getText().toString().equals("+")) operationToDo=0;
-           if(bt.getText().toString().equals("-")) operationToDo=1;
-           if(bt.getText().toString().equals("/")) operationToDo=2;
-           if(bt.getText().toString().equals("*")) operationToDo=3;
-           isempty=true;
+            case 3:
+                accumulator *= Integer.parseInt(tv.getText().toString());
+                break;
+            case 4:
+                accumulator = Integer.parseInt(tv.getText().toString());
+                break;
+
+        }
+        tv.setText(Integer.toString(accumulator));
+        if (bt.getText().toString().equals("+")) operationToDo = 0;
+        if (bt.getText().toString().equals("-")) operationToDo = 1;
+        if (bt.getText().toString().equals("/")) operationToDo = 2;
+        if (bt.getText().toString().equals("*")) operationToDo = 3;
+        if (bt.getText().toString().equals("=")) operationToDo = 4;
+
+
+       isempty=true;
+}
+
+        public void button_Click(View sender)
+        { tv.setText("0");
         }
 
 
